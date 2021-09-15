@@ -25,6 +25,21 @@ public class MyBinaryTree<K extends Comparable<K>> {
 		return current;
 	}
 
+	public void getNodes()
+	{
+		this.printNodes(root);
+	}
+	private void printNodes(MyBinaryNode<K> root) 
+	{
+		if(root==null)
+			return;
+		printNodes(root.left);
+		System.out.print(root.key+" ");
+		printNodes(root.right);
+
+	}
+
+
 	public int getSize()
 	{
 		return this.getSizeRecursive(root);
